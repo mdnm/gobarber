@@ -2,7 +2,8 @@
 
 GoBarber Project from Rocketseat bootcamp
 
-Includes: 
-  - Api (NodeJS, PostgresSQL)
-  - Frontend (ReactJS)
-  - Mobile (ReactNative)
+Stack: 
+  - NodeJS with Typescript (API)
+  - ReactJS (Web page)
+  - ReactNative (Mobile)
+  - PostgresSQL (RDBMS)
