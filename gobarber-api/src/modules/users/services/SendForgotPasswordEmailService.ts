@@ -31,9 +31,19 @@ class SendForgotPasswordEmailService {
       throw new AppError('User not found', HttpStatusCode.BAD_REQUEST);
     }
 
-    const userToken = await this.usersTokensRepository.generate(user.id);
+    const { token } = await this.usersTokensRepository.generate(user.id);
 
-    this.mailProvider.sendMail(email, `Reset password token: ${userToken.token}`);
+    this.mailProvider.sendMail({
+      to: {
+        name: user.name,
+        email,
+      },
+      subject: '[GoBarber] Password reset',
+      templateData: {
+        template: 'Password reset token {{token}}',
+        variables: { token },
+      },
+    });
   }
 }
 
