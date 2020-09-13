@@ -6,3 +6,5 @@ temp/
 
 tmp/*
 !tmp/.gitkeep
+
+yarn-error.log
